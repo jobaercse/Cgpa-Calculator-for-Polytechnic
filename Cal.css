@@ -1,0 +1,116 @@
+body{background-image:url(ami.jpg)}
+#cgpa_cal{
+	width:350px;
+	height:800px;
+	border:10px solid#ff3300;
+	background-color:#1365A7;
+border:5px solid black;
+margin:150px auto;
+text-align:center;
+box-shadow:0px 0px 30px gray;
+background:lightblue;
+		
+}
+
+form{
+	color:#5A9CE7;
+}
+h2{
+	color:#00AD0D;
+	}
+h6{
+	color:#ffooaa;
+	}
+	#cgpa_cal:hover
+{
+	background:yellow;
+	font-weight:bold;
+}
+#total{margin-top:30px;
+margin-left:15px;
+	margin-bottom:25px;
+	height:28px;
+	width:144px;
+	text-align:left;
+	border:1px solid red;
+	box-shadow:0px 0px 30px #493091;
+	font:20px bold;
+color:blue;}
+#input1{width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input2{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input3{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input4{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input5{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input6{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input7{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+#input8{
+	width:100px;
+	height:36px;
+	margin-left:18px;
+	margin-bottom:20px;
+	box-shadow:0px 0px 20px skyblue; 
+	cursor:pointer;
+	
+}
+	#Reset:hover{background:red;
+	font-weight:bold;
+		
+	}
+	#avarage:hover{{background:#ffoooo;
+	font-weight:bold;}
+	

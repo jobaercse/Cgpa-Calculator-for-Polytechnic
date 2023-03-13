@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>Cgpa Calculator<></title>
+<link href="cal.css" rel="stylesheet" type="text/css">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+
+var imageclock=new Object()
+	//Enter path to clock digit images here, in order of 0-9, then "am/pm", then colon image:
+	imageclock.digits=["c0.gif", "c1.gif", "c2.gif", "c3.gif", "c4.gif", "c5.gif", "c6.gif", "c7.gif", "c8.gif", "c9.gif", "cam.gif", "cpm.gif", "colon.gif"]
+	imageclock.instances=0
+	var preloadimages=[]
+	for (var i=0; i<imageclock.digits.length; i++){ //preload images
+		preloadimages[i]=new Image()
+		preloadimages[i].src=imageclock.digits[i]
+	}
+
+	imageclock.imageHTML=function(timestring){ //return timestring (ie: 1:56:38) into string of images instead
+		var sections=timestring.split(":")
+		if (sections[0]=="0") //If hour field is 0 (aka 12 AM)
+			sections[0]="12"
+		else if (sections[0]>=13)
+			sections[0]=sections[0]-12+""
+		for (var i=0; i<sections.length; i++){
+			if (sections[i].length==1)
+				sections[i]='<img src="'+imageclock.digits[0]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i])]+'" />'
+			else
+				sections[i]='<img src="'+imageclock.digits[parseInt(sections[i].charAt(0))]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i].charAt(1))]+'" />'
+		}
+		return sections[0]+'<img src="'+imageclock.digits[12]+'" />'+sections[1]+'<img src="'+imageclock.digits[12]+'" />'+sections[2]
+	}
+
+	imageclock.display=function(){
+		var clockinstance=this
+		this.spanid="clockspan"+(imageclock.instances++)
+		document.write('<span id="'+this.spanid+'"></span>')
+		this.update()
+		setInterval(function(){clockinstance.update()}, 1000)
+	}
+
+	imageclock.display.prototype.update=function(){
+		var dateobj=new Date()
+		var currenttime=dateobj.getHours()+":"+dateobj.getMinutes()+":"+dateobj.getSeconds() //create time string
+		var currenttimeHTML=imageclock.imageHTML(currenttime)+'<img src="'+((dateobj.getHours()>=12)? imageclock.digits[11] : imageclock.digits[10])+'" />'
+		document.getElementById(this.spanid).innerHTML=currenttimeHTML
+
+	}
+
+
+</script>
+
+
+</head>
+<body>
+<p>&nbsp;</p>
+<p><script type="text/javascript">
+
+new imageclock.display()
+
+</script>&nbsp;</p>
+<head>
+<style type="text/css">
+
+.main {
+width:200px;
+border:1px solid black;
+}
+
+.month {
+background-color:black;
+font:bold 12px verdana;
+color:white;
+}
+
+.daysofweek {
+background-color:gray;
+font:bold 12px verdana;
+color:white;
+}
+
+.days {
+font-size: 12px;
+font-family:verdana;
+color:black;
+background-color: lightyellow;
+padding: 2px;
+}
+
+.days #today{
+font-weight: bold;
+color: red;
+}
+
+</style>
+
+
+<script type="text/javascript" src="basiccalendar.js">
+
+
+
+</script> 
+</head>
+
+
+<body>
+<p>&nbsp;</p>
+<p><script type="text/javascript">
+
+var todaydate=new Date()
+var curmonth=todaydate.getMonth()+1
+var curyear=todaydate.getFullYear() 
+
+document.write(buildCal(curmonth ,curyear, "main", "month", "daysofweek", "days", 1));
+</script>&nbsp;</p>
+
+<center>
+<div id="rib">
+<b><script>
+
+
+
+var text="CGPA CALCULATOR</br> Createing By </br>Md:Jobaer Hossain</br>Magura Polytechnic Institute" 
+var speed=10 
+
+
+
+
+if (document.all||document.getElementById){
+document.write('<span id="highlight">' + text + '</span>')
+var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
+}
+else
+document.write(text)
+var hex=new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0")
+var r=1
+var g=1
+var b=1
+var seq=1
+function changetext(){
+rainbow="#"+hex[r]+hex[g]+hex[b]
+storetext.style.color=rainbow
+}
+function change(){
+if (seq==6){
+b--
+if (b==0)
+seq=1
+}
+if (seq==5){
+r++
+if (r==12)
+seq=6
+}
+if (seq==4){
+g--
+if (g==0)
+seq=5
+}
+if (seq==3){
+b++
+if (b==12)
+seq=4
+}
+if (seq==2){
+r--
+if (r==0)
+seq=3
+}
+if (seq==1){
+g++
+if (g==12)
+seq=2
+}
+changetext()
+}
+function starteffect(){
+if (document.all||document.getElementById)
+flash=setInterval("change()",speed)
+}
+starteffect()
+</script>
+</b>
+<div>
+
+
+<div id="cgpa_cal">
+<div id="cal">
+<h2>CGPA Calculator</h2>
+</div>
+<div id="box">
+			1st Semester :
+			<input type="text" id="input1" style=color:#8BC2E5"><br />
+			2nd Semester :
+			<input type="text" id="input2" style=color:#8BC2E5"><br />
+			3rd Semester :
+			<input type="text" id="input3" style=color:#8BC2E5"><br />
+			4th Semester :
+			<input type="text" id="input4" style=color:#8BC2E5"><br />
+			5th Semester :
+			<input type="text" id="input5" style=color:#8BC2E5"><br />
+			6th Semester   :
+			<input type="text" id="input6" style=color:#8BC2E5"><br />
+			7th Semester :
+			<input type="text" id="input7" style=color:#8BC2E5"><br />
+			8th Semester :
+			<input type="text" id="input8" style=color:#8BC2E5">
+			<hr><br />
+			</div>
+			
+			<div id="avarage">
+			<input type="button" value="Avarage CGPA Ponit" onclick="doMath()" style="width:145px; height:40px">
+		
+		</div>
+			
+			<input type="text" id="total" >
+			
+			<div id="Reset">
+			<input type="button" value="Reset" onclick="runclear()" style="width:150px; height:35px;">
+</div>
+			<br />
+			<h6>&copy;by Jobaer Hossain</h6>
+
+</div>
+</center>
+<script src="css.js">
+
+
+</script>
+<center>
+<p align="left"><strong></strong> </p>
+
+<p align="left"><!--webbot bot="HTMLMarkup" startspan --></p><form name="news">
+<textarea name="news2" cols="40" rows="4" wrap="virtual">Make sure _</textarea>
+</form>
+
+<script language="JavaScript">
+
+var newsText = new Array();
+newsText[0] = "This Is a Cgpa Calculator,Calender.U can use This Calculator to Calculate Ur 8 Semester Cgpa Easily....";
+newsText[2] = "Cgpa Calculator";
+newsText[1] = "Calender ...";
+
+newsText[3] = "Programmed by: Md. Jobaer Hossain...";
+newsText[4] = "Copyright by Computer Technology Magura Polytechnic Institute..."
+
+var ttloop = 1;    
+var tspeed = 500;  
+var tdelay = 1000; 
+
+
+var dwAText, cnews=0, eline=0, cchar=0, mxText;
+
+function doNews() {
+  mxText = newsText.length - 1;
+  dwAText = newsText[cnews];
+  setTimeout("addChar()",1000)
+}
+function addNews() {
+  cnews += 1;
+  if (cnews <= mxText) {
+    dwAText = newsText[cnews];
+    if (dwAText.length != 0) {
+      document.news.news2.value = "";
+      eline = 0;
+      setTimeout("addChar()",tspeed)
+    }
+  }
+}
+function addChar() {
+  if (eline!=1) {
+    if (cchar != dwAText.length) {
+      nmttxt = ""; for (var k=0; k<=cchar;k++) nmttxt += dwAText.charAt(k);
+      document.news.news2.value = nmttxt;
+      cchar += 1;
+      if (cchar != dwAText.length) document.news.news2.value += "_";
+    } else {
+      cchar = 0;
+      eline = 1;
+    }
+    if (mxText==cnews && eline!=0 && ttloop!=0) {
+      cnews = 0; setTimeout("addNews()",tdelay);
+    } else setTimeout("addChar()",tspeed);
+  } else {
+    setTimeout("addNews()",tdelay)
+  }
+}
+
+doNews()
+</script>
+
+</center>
+</script>
+
+
+</body>
+</body>
+</html>
